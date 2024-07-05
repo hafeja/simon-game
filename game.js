@@ -5,7 +5,7 @@ var level = 0;
 var started = false;
 
 // workaround for https://developer.chrome.com/blog/autoplay/
-$(document).on("keydown", function(){
+$("#level-title").on("click", function(){
     $("#level-title").text("Level " + level);
     if (!started){
         started = true;
@@ -59,7 +59,7 @@ function checkAnswer(currentLevel, indexLastAnswer) {
         setTimeout(function(){
             $("body").removeClass("game-over");
         }, 200);
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over! Click HERE to Restart.");
         startOver();
     }
 }
